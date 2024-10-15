@@ -8,7 +8,7 @@
 }
 
 body {
-  margin: 100px 0;
+  margin: 100px 0 0 0;
   text-align: center;
 }
 
@@ -108,6 +108,54 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 20px;
+}
+
+.footer-container {
+  background-color: var(--thirtuary-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 0px;
+}
+
+.footer-thumbnail {
+  width: 16px;
+  padding-top: 35px;
+  margin: 10px;
+}
+.resume {
+  width: 13px;
+  padding-top: 35px;
+  margin: 10px;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
+
+h5 {
+  color: black;
+  font-size: 16px;
+}
+
+.your-message {
+  margin-top: 17px;
+}
+
+.btn {
+  background-color: var(--thirtuary-color);
+  padding: 10px 20px;
+  align-items: start;
 }
 
 .container3 {
