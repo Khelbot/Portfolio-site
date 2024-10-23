@@ -1,19 +1,23 @@
 <?php   
+$messageSent = ""; // Initialize message variable
 
-if (isset($_POST['submit'])){
-   
-    $mailForm = $_POST['_replyto'];
-    $message = $_POST['message'];
+if (isset($_POST['submit'])) {
+    $mailForm = filter_var(trim($_POST['_replyto']), FILTER_VALIDATE_EMAIL);
+    $message = trim($_POST['message']);
 
-    $mailTo = "khelseaalarefi@gmail.com";
-    $subject = "New Message from Website"; // Add a subject
-    $headers = "From: ".$mailForm;
-    $txt = "You have received a message: \n\n".$message;
+    if ($mailForm && !empty($message)) {
+        $mailTo = "khelseaalarefi@gmail.com";
+        $subject = "New Message from Website";
+        $headers = "From: $mailForm\r\nReply-To: $mailForm\r\n";
 
-    if(mail($mailTo, $subject, $txt, $headers)){
-        header("Location: index.html?MessageSent");
+        // Send email
+        if (mail($mailTo, $subject, $message, $headers)) {
+            $messageSent = "Message sent successfully!";
+        } else {
+            $messageSent = "Email sending failed.";
+        }
     } else {
-        echo "Email sending failed.";
+        $messageSent = "Invalid email address or message.";
     }
 }
 ?>
