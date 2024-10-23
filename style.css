@@ -5,31 +5,50 @@
   --main-color: #b498d6;
   --thirtuary-color: #f5f2fe;
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  --heading-font-family: "Playfair Display", serif;
+  --default-font-family: "Poppins", sans-serif;
 }
 
 body {
-  margin: 100px 0 0 0;
+  margin: 50px 0 0 0;
   text-align: center;
+  font-family: var(--default-font-family);
+}
+
+.hero {
+  background-color: var(--thirtuary-color);
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
+  line-height: 1.5;
+  font-weight: bold;
 }
 
 h1 {
-  font-weight: 540;
-  font-size: 70px;
+  font-size: 90px;
+  font-family: var(--heading-font-family);
 }
 
 h2 {
   font-size: 45px;
 }
+
 h3 {
   font-size: 24px;
-  opacity: 0.7;
+  font-family: var(--heading-font-family);
 }
+.intro-words {
+  font-size: 36px;
+}
+
+.check-out {
+  font-size: 16px;
+  font-weight: 550;
+}
+
 p {
   font-size: 18px;
   line-height: 1.5;
@@ -47,16 +66,22 @@ p {
 
 .primary-link {
   border-radius: 4px;
-  padding: 20px 15px;
+  width: 145px;
+  padding: 20px 30px;
   text-decoration: none;
   text-transform: capitalize;
-  background: rgb(7, 7, 54);
-  box-shadow: var(--box-shadow);
-  color: white;
+  background: rgb(7, 7, 54); /* Original background color */
+
+  color: white; /* Original font color */
+  font-weight: 500;
+  transition: background-color 0.5s ease, border-color 0.5s ease; /* Add transition for smooth effect */
 }
 
 .primary-link:hover {
-  color: white;
+  background-color: #f4f2fe;
+  color: black; /* Keep font color the same */
+  box-shadow: none;
+  box-shadow: var(--box-shadow);
 }
 
 .secondary-link {
@@ -66,6 +91,14 @@ p {
   text-transform: capitalize;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+}
+
+.secondary-link:hover {
+  border-color: black;
+  border-width: 7px;
+  background-color: white;
+  color: black;
+  box-shadow: none;
 }
 
 a {
@@ -79,7 +112,8 @@ a:hover {
 
 .about-subheading {
   font-size: 25px;
-  margin-top: 60px;
+  margin-top: 20px;
+  font-family: var(--heading-font-family);
 }
 .about-paragraph {
   font-size: 20px;
@@ -87,11 +121,15 @@ a:hover {
   margin-top: 35px;
 }
 
+.image-row {
+  margin-top: 30px;
+}
+
 #contact {
   text-align: center;
 }
 #contact-me {
-  font-size: 40px;
+  font-size: 36px;
   margin-top: 10px;
   margin-bottom: 0px;
   color: black;
@@ -143,7 +181,8 @@ a:hover {
   margin: auto;
 }
 .form-label {
-  font-weight: 500;
+  font-weight: 550;
+  text-align: start;
 }
 
 h5 {
@@ -151,14 +190,20 @@ h5 {
   font-size: 16px;
 }
 
-.your-message {
-  margin-top: 17px;
+.send-button {
+  background-color: black;
+  display: inline-block;
+  padding: 13px 25px;
+  font-size: 16px;
+  font-weight: 550;
+  color: white;
 }
 
-.btn {
-  background-color: var(--thirtuary-color);
-  padding: 10px 20px;
-  align-items: start;
+.send-button:hover {
+  background-color: #f4f2fe;
+  color: black;
+  box-shadow: none;
+  box-shadow: var(--box-shadow);
 }
 
 .container3 {
