@@ -120,48 +120,35 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <!-- Display the success message if it exists -->
-            <?php if ($messageSent): ?>
-            <div class="alert alert-success" role="alert">
-              <?php echo $messageSent; ?>
+      <div class="row">
+        <div col-md-8>
+          <form
+            id="contact-form"
+            method="POST"
+            action="contact.php"
+            class="form-container border p-3 rounded mb-3"
+          >
+            <div class="mb-3 text-start">
+              <label class="form-label"> Your email: </label>
+              <input
+                type="email"
+                name="_replyto"
+                class="form-control"
+                required=""
+              />
             </div>
-            <?php endif; ?>
-
-            <form
-              id="contact-form"
-              method="POST"
-              action=""
-              class="form-container border p-3 rounded mb-3"
-            >
-              <div class="mb-3 text-start">
-                <label class="form-label">Your email:</label>
-                <input
-                  type="email"
-                  name="_replyto"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="mb-3 text-start">
-                <label class="form-label">Your message:</label>
-                <textarea
-                  name="message"
-                  class="form-control"
-                  required
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                name="submit"
-                class="btn btn-branding send-button"
-              >
-                Send
-              </button>
-            </form>
-          </div>
+            <div class="mb-3 text-start">
+              <label class="form-label"> Your message: </label>
+              <textarea
+                name="message"
+                class="form-control"
+                required=""
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-branding send-button">
+              Send
+            </button>
+          </form>
         </div>
       </div>
 
