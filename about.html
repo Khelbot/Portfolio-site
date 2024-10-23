@@ -119,29 +119,39 @@
           />
         </div>
       </div>
-      <!--  
-      <div class="form-container justify-content-center align-items-center">
-        <div class="row">
-          <div class="col-12">
-            <form action="send_email.php" method="POST" id="contactForm">
-              <h5 class="text-start">Your Email:</h5>
-              <input type="email" class="form-control" id="email" required />
-              <h5 class="text-start your-message">Your Message:</h5>
-              <textarea
+
+      <div class="row">
+        <div col-md-8>
+          <form
+            action="https://formspree.io/f/mwkalajy"
+            id="contact-form"
+            method="POST"
+            action="contact.php"
+            class="border p-3 rounded mb-3"
+          >
+            <div class="mb-3">
+              <label class="form-label"> Your email: </label>
+              <input
+                type="email"
+                name="_replyto"
                 class="form-control"
-                id="message"
-                rows="3"
-                required
+                required=""
+                autofocus=""
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label"> Your message: </label>
+              <textarea
+                name="message"
+                class="form-control"
+                required=""
               ></textarea>
-              <br />
-              <button type="submit" class="btn justify-content-start">
-                Send
-              </button>
-            </form>
-          </div>
+            </div>
+            <button type="submit" class="btn btn-branding">Send</button>
+          </form>
         </div>
       </div>
--->
+
       <div id="contact" class="text-center mt-5">
         <h3 id="contact-me">📮 Contact Me at</h3>
         <a
