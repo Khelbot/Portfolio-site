@@ -1,23 +1,29 @@
-<?php   
-$messageSent = ""; // Initialize message variable
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve and sanitize form data
+    $email = htmlspecialchars(trim($_POST['_replyto']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
-if (isset($_POST['submit'])) {
-    $mailForm = filter_var(trim($_POST['_replyto']), FILTER_VALIDATE_EMAIL);
-    $message = trim($_POST['message']);
+    // Validate email
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $to = "recipient@example.com"; // Replace with your email address
+        $subject = "New Message from Contact Form";
+        $headers = "From: $email\r\n";
+        $headers .= "Reply-To: $email\r\n";
 
-    if ($mailForm && !empty($message)) {
-        $mailTo = "khelseaalarefi@gmail.com";
-        $subject = "New Message from Website";
-        $headers = "From: $mailForm\r\nReply-To: $mailForm\r\n";
+        // Prepare the email body
+        $body = "You have received a new message from the contact form:\n\n";
+        $body .= "Email: $email\n";
+        $body .= "Message:\n$message\n";
 
-        // Send email
-        if (mail($mailTo, $subject, $message, $headers)) {
-            $messageSent = "Message sent successfully!";
+        // Send the email
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Email sent successfully!";
         } else {
-            $messageSent = "Email sending failed.";
+            echo "Email sending failed.";
         }
     } else {
-        $messageSent = "Invalid email address or message.";
+        echo "Invalid email format.";
     }
 }
 ?>
