@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 $email = $_POST["sender"];
 $message = $_POST["message"];
@@ -44,9 +46,9 @@ echo'<!DOCTYPE html>
   </head>
   <body>
     
-          <h2 class="sent-message text-center">Thank you for contacting me. 
-            <br>
-            I'll get back to you as soon as possible!</h2>
+          <h2 class="sent-message text-center"> Thank you for contacting me. 
+            <br>I\'ll get back to you as soon as possible!</h2>
+
            <a
                 class="back-to-homepage"
                 aria-current="page"
