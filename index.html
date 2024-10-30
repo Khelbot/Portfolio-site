@@ -20,6 +20,11 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+      src="https://kit.fontawesome.com/531fd4969d.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -101,11 +106,14 @@
       </div>
     </div>
     <div>
-      <p class="check-out pt-5 pb-5 pb-md-2">
+      <p class="check-out pt-5 pb-4 mb-5">
         Check out some of my featured projects below
       </p>
     </div>
-    <div class="container">
+
+    <i class="fa-solid fa-arrow-down-long" id="scroll-arrow"></i>
+
+    <div class="container home-page-container">
       <div class="row mt-5">
         <div class="col-sm-6">
           <h2 class="mb-3">Dictionary</h2>
@@ -296,5 +304,26 @@
         </div>
       </footer>
     </div>
+    <script>
+      const scrollArrow = document.getElementById("scroll-arrow");
+
+      window.addEventListener("scroll", () => {
+        // Get the current scroll position
+        const scrollPosition = window.scrollY;
+
+        // Set maximum scroll position before arrow fully disappears (adjust as needed)
+        const maxScroll = 40;
+
+        // Calculate opacity based on scroll position
+        let opacity = 1 - scrollPosition / maxScroll;
+
+        // Ensure opacity stays within bounds (0 to 1)
+        opacity = Math.max(opacity, 0);
+        opacity = Math.min(opacity, 1);
+
+        // Apply opacity to the arrow element
+        scrollArrow.style.opacity = opacity;
+      });
+    </script>
   </body>
 </html>
