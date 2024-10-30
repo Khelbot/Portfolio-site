@@ -3,12 +3,11 @@
 $email = $_POST["sender"];
 $message = $_POST["message"];
 
-
-$mailHeader = "From:".$email. "\r\n" 
+$mailHeader = "From:".$email. "\r\n";
 
 $recipient = "khelseaalarefi@gmail.com";
 
-mail($recipient, $message, $mailHeader)
+mail($recipient, "Contact Form Message", $message, $mailHeader)
 or die("Error");
 
 
